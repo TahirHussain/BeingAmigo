@@ -83,7 +83,7 @@
                                     <a class="nav-link" href="#0" data-no="3" style="color:blue; font-weight:bold;">Blogs</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#0" data-no="4" style="color:green; font-weight:bold;">Resources</a>
+                                    <a id="res" class="nav-link" href="#0" data-no="4" style="color:green; font-weight:bold;">Resources</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#0" data-no="5" style="color:#CCCC00; font-weight:bold;">Jobs</a>
@@ -579,6 +579,11 @@
         
                 // Remove preloader (https://ihatetomatoes.net/create-custom-preloading-screen/)
                 $('body').addClass('loaded');
+				
+				var pathname = window.location.pathname;
+				if(pathname.includes("index")){
+					$('#res')[0].click();
+				}
                            
             });
 
@@ -621,7 +626,7 @@
                 loadGoogleMap(); // Google Map
             });
 
-        </script>          
+        </script>
 
 </body>
 </html>
