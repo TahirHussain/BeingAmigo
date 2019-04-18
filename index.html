@@ -49,6 +49,7 @@
 	
 	<!-- My Ads -->
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
 	<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
@@ -60,10 +61,10 @@
 			  var type = this.options.type;
 			  var didConsent = this.hasConsented();
 			  if (didConsent) {
-				alert("Enable onstatuschange");
+				(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=0;
 			  }
 			  else {
-				alert("disable onstatuschange");
+				(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;
 			  }
 			},
 		  "palette": {
@@ -82,8 +83,9 @@
 		  }
 		})});
 	</script>
-	<script>
 	
+	<script>
+	alert("whether user presses or not.");
 	  (adsbygoogle = window.adsbygoogle || []).push({
 		google_ad_client: "ca-pub-6166858450148691",
 		enable_page_level_ads: true
