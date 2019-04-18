@@ -58,10 +58,10 @@
 		  onInitialise: function (status) {
 			  var type = this.options.type;
 			  var didConsent = this.hasConsented();
-			  if (type == 'opt-in' && didConsent) {
+			  if (didConsent) {
 				alert("Enable init");
 			  }
-			  if (type == 'opt-out' && !didConsent) {
+			  if (!didConsent) {
 				alert("disable init");
 			  }
 			},
@@ -69,21 +69,22 @@
 			onStatusChange: function(status, chosenBefore) {
 			  var type = this.options.type;
 			  var didConsent = this.hasConsented();
-			  if (type == 'opt-in' && didConsent) {
+			  if (didConsent) {
 				alert("Enable onstatuschange");
 			  }
-			  if (type == 'opt-out' && !didConsent) {
+			  if (!didConsent) {
 				alert("disable onstatuschange");
 			  }
 			},
 			 
 			onRevokeChoice: function() {
 			  var type = this.options.type;
-			  if (type == 'opt-in') {
+			  var didConsent = this.hasConsented();
+			  if (didConsent) {
 				alert("Enable onRevokeChoice");
 			  }
-			  if (type == 'opt-out') {
-				alert("Enable onRevokeChoice");
+			  if (!didConsent) {
+				alert("disable onRevokeChoice");
 			  }
 			},
 		  "palette": {
