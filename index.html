@@ -49,11 +49,43 @@
 	
 	<!-- My Ads -->
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	
 	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
 	<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
 	<script>
 		window.addEventListener("load", function(){
 		window.cookieconsent.initialise({
+		  onInitialise: function (status) {
+			  var type = this.options.type;
+			  var didConsent = this.hasConsented();
+			  if (type == 'opt-in' && didConsent) {
+				alert("Enable init");
+			  }
+			  if (type == 'opt-out' && !didConsent) {
+				alert("disable init");
+			  }
+			},
+			 
+			onStatusChange: function(status, chosenBefore) {
+			  var type = this.options.type;
+			  var didConsent = this.hasConsented();
+			  if (type == 'opt-in' && didConsent) {
+				alert("Enable onstatuschange");
+			  }
+			  if (type == 'opt-out' && !didConsent) {
+				alert("disable onstatuschange");
+			  }
+			},
+			 
+			onRevokeChoice: function() {
+			  var type = this.options.type;
+			  if (type == 'opt-in') {
+				alert("Enable onRevokeChoice");
+			  }
+			  if (type == 'opt-out') {
+				alert("Enable onRevokeChoice");
+			  }
+			},
 		  "palette": {
 			"popup": {
 			  "background": "#216942",
@@ -64,8 +96,9 @@
 			}
 		  },
 		  "theme": "edgeless",
+		  "type": "opt-in",
 		  "content": {
-			"href": "www.beingamigo.com/cookiepolicy"
+			"href": "whatarecookies.com"
 		  }
 		})});
 	</script>
