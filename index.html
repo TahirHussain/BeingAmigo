@@ -45,9 +45,32 @@
 	  gtag('config', 'UA-138496196-1');
 	</script>
 	
+	
+	
 	<!-- My Ads -->
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
 	<script>
+		window.addEventListener("load", function(){
+		window.cookieconsent.initialise({
+		  "palette": {
+			"popup": {
+			  "background": "#216942",
+			  "text": "#b2d192"
+			},
+			"button": {
+			  "background": "#afed71"
+			}
+		  },
+		  "theme": "edgeless",
+		  "content": {
+			"href": "www.beingamigo.com/cookiepolicy"
+		  }
+		})});
+	</script>
+	<script>
+	
 	  (adsbygoogle = window.adsbygoogle || []).push({
 		google_ad_client: "ca-pub-6166858450148691",
 		enable_page_level_ads: true
